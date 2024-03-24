@@ -1,4 +1,4 @@
-from typing import List, Optional, Tuple
+from typing import List, Optional, Tuple, Union
 
 import PIL.Image
 import torch
@@ -199,8 +199,8 @@ def _convert_bounding_box_format(
 
 def convert_bounding_box_format(
     inpt: torch.Tensor,
-    old_format: Optional[BoundingBoxFormat] = None,
-    new_format: Optional[BoundingBoxFormat] = None,
+    old_format: Optional[Union[str, BoundingBoxFormat]] = None,
+    new_format: Optional[Union[str, BoundingBoxFormat]] = None,
     inplace: bool = False,
 ) -> torch.Tensor:
     """See :func:`~torchvision.transforms.v2.ConvertBoundingBoxFormat` for details."""
